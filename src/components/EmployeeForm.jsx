@@ -5,8 +5,7 @@ import { useState } from 'react';
 import Select from 'react-select';
 import { optionsStates, optionsDepartement } from '../lib/optionsValues';
 import { Button } from '@mui/material';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
+import CustomDatepicker from './CustomDatePicker';
 
 const EmployeeForm = () => {
     const { register, handleSubmit, setValue } = useForm();
@@ -31,27 +30,21 @@ const EmployeeForm = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
         <input {...register('firstName')} placeholder="First Name" required />
         <input {...register('lastName')} placeholder="Last Name" required />
-        <DatePicker
-                selected={birthDate}
-                onChange={(date) => {
-                    setBirthDate(date);
-                    setValue('dateOfBirth', date);
-                }}
-                placeholderText="Date of Birth"
-                dateFormat="yyyy/MM/dd"
-                isClearable
-            />
+        <CustomDatepicker
+            selectedDate={birthDate}
+            onDateChange={(date) => {
+                setBirthDate(date);
+                setValue('dateOfBirth', date);
+            }}
+          />
         {/* <input {...register('dateOfBirth')} type="date" required /> */}
-        <DatePicker
-                selected={startDate}
-                onChange={(date) => {
-                    setStartDate(date);
-                    setValue('startDate', date); // Mettre à jour le champ du formulaire
-                }}
-                placeholderText="Start Date"
-                dateFormat="yyyy/MM/dd"
-                isClearable
-            />
+        <CustomDatepicker
+            selectedDate={startDate}
+            onDateChange={(date) => {
+                setStartDate(date);
+                setValue('startDate', date);
+            }}
+          />
         {/* <input {...register('startDate')} type="date" required /> */}
         <input {...register('street')} placeholder="Street" required />
         <input {...register('city')} placeholder="City" required />
