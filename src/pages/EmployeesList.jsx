@@ -1,8 +1,11 @@
+import EmployeeTable from "../components/EmployeeTable"
 
 
 const EmployeesList = () => {
   return (
-    <div>EmployeesList</div>
+   <>
+    <EmployeeTable/>
+   </>
   )
 }
 

@@ -1,16 +1,7 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body{
-    width: 100%;
-    height: 100vh;
+.css-1edfpdg-MuiTypography-root{
     font-family: "Josefin Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    font-size: 1.5rem;
 }
-
-

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const MainContent = ({ children }) => {
     return (
-      <Container style={{ marginLeft: '250px', padding: '20px' }}>
+      <Container style={{ padding: '40px' }}>
         {children}
       </Container>
     );
