@@ -1,0 +1,33 @@
+.table-container {
+    margin: 20px;
+    overflow-x: auto;
+  }
+  
+  .employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+  }
+  
+  .employee-table th,
+  .employee-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .employee-table th {
+    background-color: #637615;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .employee-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .employee-table tr:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+  }
+  

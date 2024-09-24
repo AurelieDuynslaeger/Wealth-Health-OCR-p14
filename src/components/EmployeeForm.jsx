@@ -26,8 +26,8 @@ const EmployeeForm = () => {
         id: Date.now(),
         department: selectedOptionDep?.value,
         state: selectedOptionStat?.value,
-        birthDate: format(data.birthDate, 'dd-MM-yyyy'), 
-        startDate: format(data.startDate, 'dd-MM-yyyy'), 
+        birthDate: format(new Date(data.birthDate), 'dd-MM-yyyy'),
+    startDate: format(new Date(data.startDate), 'dd-MM-yyyy'),
       };
     
       dispatch(addEmployee(formattedData)); 
