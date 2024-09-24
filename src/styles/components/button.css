@@ -1,0 +1,18 @@
+
+.custom-button {
+    background-color: #3e4720; 
+    color: #f8f9ec; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.5rem;
+  }
+  
+  .custom-button:hover {
+    background-color: #cad680;
+    color: #1f260d; /* Couleur de fond au survol */
+  }
+  

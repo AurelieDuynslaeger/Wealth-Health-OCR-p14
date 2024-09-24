@@ -2,14 +2,14 @@ import DatePicker from "react-datepicker";
 import PropTypes from "prop-types";
 import "react-datepicker/dist/react-datepicker.css";
 
-const CustomDatepicker = ({ selectedDate, onDateChange }) => {
+const CustomDatepicker = ({ selectedDate, onDateChange, placeholder = "Select a date" }) => {
     return (
         <DatePicker
             selected={selectedDate}
             onChange={onDateChange}
-            dateFormat="yyyy/MM/dd"
+            dateFormat="dd/MM/yyyy"
             isClearable
-            placeholderText="Select a date"
+            placeholderText={placeholder}
         />
     );
 };
@@ -17,6 +17,7 @@ const CustomDatepicker = ({ selectedDate, onDateChange }) => {
 CustomDatepicker.propTypes = {
     selectedDate: PropTypes.instanceOf(Date),
     onDateChange: PropTypes.func.isRequired,  
+    placeholder: PropTypes.string,
 };
 
 export default CustomDatepicker;
