@@ -1,7 +1,48 @@
-.css-1edfpdg-MuiTypography-root{
+.side-menu {
+    width: 15%;
+    height: 100vh;
+    background-color: #f5f9ce;
+    color: #232C07;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 20px;
     font-family: "Josefin Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.5rem;
-}
+  }
+  
+  .logo {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .menu-list {
+    list-style-type: none;
+    padding: 0; 
+  }
+
+  .menu-item {
+    display: flex;
+    align-items: center; /* Aligne l'icône et le texte verticalement */
+    padding: 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+  }
+
+  .menu-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #232C07;
+    width: 100%; /* S'assure que le lien prend toute la largeur */
+  }
+  
+  .menu-link svg {
+    margin-right: 10px; /* Espace entre l'icône et le texte */
+  }
+  
+
+  .menu-item:hover {
+    background-color: #98ac3b;
+    border-radius: 10px;
+    color: #f5f9ce;
+  }
+  

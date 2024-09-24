@@ -18,10 +18,14 @@ const EmployeeTable = () => {
     <Table>
       <TableHead>
         <TableRow>
-          <TableCell>ID</TableCell>
-          <TableCell>Name</TableCell>
-          <TableCell>Position</TableCell>
-          <TableCell>Department</TableCell>
+          <TableCell>First Name</TableCell>
+          <TableCell>Last Name</TableCell>
+          <TableCell>Start Date</TableCell>
+          <TableCell>Date of Birth</TableCell>
+          <TableCell>Street</TableCell>
+          <TableCell>City</TableCell>
+          <TableCell>State</TableCell>
+          <TableCell>Zip Code</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>

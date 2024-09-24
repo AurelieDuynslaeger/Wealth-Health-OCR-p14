@@ -1,30 +1,40 @@
-import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import { Home, People } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
-import whlogo from "../../public/assets/wealthhealthlogo.png"
+import { Link } from 'react-router-dom'; 
+// import whlogo from "../../public/assets/wealthhealthlogo.png"; 
+import { FaHouse, FaPeopleGroup } from "react-icons/fa6";
+import '../styles/components/SideMenu.css';
 
-import '../styles/components/SideMenu.css'
+const navPaths = [
+  {
+    to: "/",
+    name: "Accueil",
+    icon: <FaHouse/>
+  },
+  {
+    to: "/employees-list",
+    name: "Liste des Employés",
+    icon: <FaPeopleGroup/>
+  }
+]
 
 const SideMenu = () => {
   return (
-    <div style={{ width: '250px', height: '100vh', backgroundColor: '#f5f9ce', color: '#232C07', borderTopRightRadius : "25px", borderBottomRightRadius : "25px" }}>
-      <img src={whlogo} alt="Wealth Health HR Net Logo"  />
-      <List>
-        <ListItem button component={Link} to="/">
-          <ListItemIcon>
-            <Home style={{ color: '#637615' }} />
-          </ListItemIcon>
-          <ListItemText primary="Accueil" />
-        </ListItem>
-        <ListItem button component={Link} to="/employees-list">
-          <ListItemIcon>
-            <People style={{ color: '#637615' }} />
-          </ListItemIcon>
-          <ListItemText primary="Liste des Employés" />
-        </ListItem>
-      </List>
+    <div className='side-menu'>
+      {/* <img src={whlogo} alt="Wealth Health HR Net Logo" loading="lazy" className="logo" /> */}
+      <nav>
+        <ul className="menu-list">
+        {navPaths.map((nav) => (
+            <li key={nav.to} className="menu-item">
+              <Link to={nav.to} className="menu-link">
+                {nav.icon} {/* Affiche l'icône */}
+                {nav.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </div>
   );
 };
 
 export default SideMenu;
+
