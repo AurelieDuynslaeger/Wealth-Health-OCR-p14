@@ -2,7 +2,6 @@ import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { addEmployee } from '../redux/slices/employeeSlice';
 import { useState } from 'react';
-import { format } from 'date-fns';
 import { optionsStates, optionsDepartement } from '../lib/optionsValues';
 import CustomDatePicker from './CustomDatePicker';
 import Button from './Button';
@@ -23,10 +22,10 @@ const EmployeeForm = () => {
             id: Date.now(),
             department: selectedOptionDep?.value,
             state: selectedOptionStat?.value,
-            birthDate: format(new Date(data.birthDate), 'dd-MM-yyyy'), 
-            startDate: format(new Date(data.startDate), 'dd-MM-yyyy'),
+            birthDate: data.birthDate,
+            startDate: data.startDate,
         };
-
+    
         dispatch(addEmployee(formattedData));
         setIsModalOpen(true);
     };

@@ -29,22 +29,15 @@ const CustomDatePicker = ({ label, onChange }) => {
         label={label}
         value={value}
         onChange={handleDateChange}
-        renderInput={(params) => (
+        components={{
+          TextField: (props) => 
           <TextField 
-            {...params} 
-            variant="outlined" // Choisissez le variant souhaité
-            fullWidth // Pour occuper toute la largeur
-            margin="normal" // Espacement autour du champ
-            sx={{
-              '& .MuiSvgIcon-root': {
-                color: 'blue !important', // Couleur de l'icône avec !important
-              },
-              '& input': {
-                color: 'black', // Couleur du texte de l'input
-              }
-            }} 
-          />
-        )}
+          {...props} 
+            variant="outlined" 
+            fullWidth
+            margin="normal"
+             />
+        }}
       />
     </LocalizationProvider>
   );

@@ -123,7 +123,7 @@ const EmployeeTable = () => {
               <td>{employee.firstName}</td>
               <td>{employee.lastName}</td>
               <td>{employee.startDate}</td>
-              <td>{employee.dateOfBirth}</td>
+              <td>{employee.birthDate}</td>
               <td>{employee.street}</td>
               <td>{employee.city}</td>
               <td>{employee.state}</td>
