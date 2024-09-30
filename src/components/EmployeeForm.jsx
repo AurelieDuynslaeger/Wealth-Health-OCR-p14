@@ -11,7 +11,7 @@ import Modal from './Modal';
 import "../styles/components/employeeform.css";
 
 const EmployeeForm = () => {
-    const { register, handleSubmit, setValue } = useForm();
+    const { register, handleSubmit, setValue} = useForm();
     const dispatch = useDispatch();
     const [selectedOptionDep, setSelectedOptionDep] = useState(null);
     const [selectedOptionStat, setSelectedOptionStat] = useState(null);
@@ -23,8 +23,8 @@ const EmployeeForm = () => {
             id: Date.now(),
             department: selectedOptionDep?.value,
             state: selectedOptionStat?.value,
-            birthDate: format(data.birthDate, 'dd-MM-yyyy'), // Assurez-vous que 'data.birthDate' est une instance de Date
-            startDate: format(data.startDate, 'dd-MM-yyyy'), // Assurez-vous que 'data.startDate' est une instance de Date
+            birthDate: format(new Date(data.birthDate), 'dd-MM-yyyy'), 
+            startDate: format(new Date(data.startDate), 'dd-MM-yyyy'),
         };
 
         dispatch(addEmployee(formattedData));

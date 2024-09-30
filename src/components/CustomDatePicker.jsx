@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { TextField } from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV3'
@@ -11,9 +12,15 @@ const CustomDatePicker = ({ label, onChange }) => {
 
   const handleDateChange = (newValue) => {
     setValue(newValue);
-    // Formater la date avant de l'envoyer
-    const formattedDate = format(newValue, 'dd-MM-yyyy'); // Formatage direct avec date-fns
-    onChange(formattedDate);
+    //formater la date avant de l'envoyer
+    if (newValue) {
+      //formatage direct avec date-fns
+      const formattedDate = format(newValue, 'dd-MM-yyyy'); 
+      onChange(formattedDate);
+    } else {
+      //en cas de suppression de la date
+      onChange(''); 
+    }
   };
 
   return (
@@ -22,6 +29,22 @@ const CustomDatePicker = ({ label, onChange }) => {
         label={label}
         value={value}
         onChange={handleDateChange}
+        renderInput={(params) => (
+          <TextField 
+            {...params} 
+            variant="outlined" // Choisissez le variant souhaité
+            fullWidth // Pour occuper toute la largeur
+            margin="normal" // Espacement autour du champ
+            sx={{
+              '& .MuiSvgIcon-root': {
+                color: 'blue !important', // Couleur de l'icône avec !important
+              },
+              '& input': {
+                color: 'black', // Couleur du texte de l'input
+              }
+            }} 
+          />
+        )}
       />
     </LocalizationProvider>
   );
