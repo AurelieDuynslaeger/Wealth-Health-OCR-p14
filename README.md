@@ -97,6 +97,43 @@ L'amélioration des performances résulte de la réduction de la manipulation ex
 
 <img src="./src/assets/lighthouse-performance.png" alt="Lighthouse results" width="500"> -->
 
+
+## Tests
+
+### Tests manuels :
+Des tests manuels ont été effectués pour vérifier le bon fonctionnement de l'interface utilisateur, y compris la création, la modification et la suppression des employés dans l'application.
+
+### Tests unitaires :
+Il est également recommandé d'ajouter des **tests unitaires** pour valider le bon fonctionnement des composants React. Si tu souhaites effectuer des tests automatisés, **Jest** est configuré pour l'application.
+
+Pour exécuter les tests unitaires :
+
+1. Installer **Jest** et les outils de test associés :
+   ```bash
+   npm install --save-dev jest @testing-library/react @testing-library/jest-dom
+   ```
+
+2. Ajouter les tests pour les composants dans le répertoire `__tests__`, par exemple :
+   ```javascript
+   // __tests__/App.test.js
+   import { render, screen } from '@testing-library/react';
+   import App from '../App';
+
+   test('renders the HRNet homepage', () => {
+     render(<App />);
+     const linkElement = screen.getByText(/Welcome to HRNet/i);
+     expect(linkElement).toBeInTheDocument();
+   });
+   ```
+
+3. Lancer les tests :
+   ```bash
+   npm run test
+   ```
+
+<p align="right">(<a href="#readme-top">retour en haut</a>)</p>
+
+
 ## Contact
 
 Aurélie Duynslaeger - [LinkedIn](https://www.linkedin.com/in/ton-profil) - aurelie.duynslaeger@gmail.com
