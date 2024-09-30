@@ -1,5 +1,5 @@
 .side-menu {
-    width: 15%;
+    width: 250px;
     height: 100vh;
     background-color: #f5f9ce;
     color: #232C07;
@@ -8,20 +8,17 @@
     padding: 20px;
     font-family: "Josefin Sans", sans-serif;
   }
-  
-  .logo {
-    max-width: 100%;
-    height: auto;
-  }
-  
+
   .menu-list {
     list-style-type: none;
     padding: 0; 
+    margin: 0;
   }
 
   .menu-item {
     display: flex;
-    align-items: center; /* Aligne l'icône et le texte verticalement */
+    align-items: center;
+    margin: 15px 0;
     padding: 15px;
     border-radius: 10px;
     transition: background-color 0.3s;
@@ -32,11 +29,12 @@
     align-items: center;
     text-decoration: none;
     color: #232C07;
-    width: 100%; /* S'assure que le lien prend toute la largeur */
+    width: 100%;
   }
   
-  .menu-link svg {
-    margin-right: 10px; /* Espace entre l'icône et le texte */
+  .menu-icon {
+    margin-right: 10px; 
+    font-size: 20px;
   }
   
 
@@ -45,4 +43,24 @@
     border-radius: 10px;
     color: #f5f9ce;
   }
+
+@media (max-width: 768px) {
+  .menu-text {
+    display: none; 
+  }
+
+  .side-menu {
+    width: 100px;
+  }
+
+  .menu-icon {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-text {
+    display: inline; 
+  }
+}
   

@@ -1,16 +1,15 @@
-import { Container } from '@mui/material';
 import PropTypes from 'prop-types';
 
 const MainContent = ({ children }) => {
     return (
-      <Container style={{ padding: '40px' }}>
+      <div className='main_content'>
         {children}
-      </Container>
+      </div>
     );
-  };
+};
 
-  MainContent.propTypes = {
+MainContent.propTypes = {
     children: PropTypes.node.isRequired, 
-  };
-  
-  export default MainContent;
+};
+
+export default MainContent;

@@ -19,14 +19,13 @@ const navPaths = [
 const SideMenu = () => {
   return (
     <div className='side-menu'>
-      {/* <img src={whlogo} alt="Wealth Health HR Net Logo" loading="lazy" className="logo" /> */}
       <nav>
         <ul className="menu-list">
         {navPaths.map((nav) => (
             <li key={nav.to} className="menu-item">
               <Link to={nav.to} className="menu-link">
-                {nav.icon} {/* Affiche l'icône */}
-                {nav.name}
+              <span className="menu-icon">{nav.icon}</span>
+              <span className="menu-text">{nav.name}</span>
               </Link>
             </li>
           ))}

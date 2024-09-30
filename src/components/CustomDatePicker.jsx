@@ -1,23 +1,35 @@
-import DatePicker from "react-datepicker";
-import PropTypes from "prop-types";
-import "react-datepicker/dist/react-datepicker.css";
 
-const CustomDatepicker = ({ selectedDate, onDateChange, placeholder = "Select a date" }) => {
-    return (
-        <DatePicker
-            selected={selectedDate}
-            onChange={onDateChange}
-            dateFormat="dd/MM/yyyy"
-            isClearable
-            placeholderText={placeholder}
-        />
-    );
+import { useState } from 'react';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV3'
+import { format } from 'date-fns';
+import PropTypes from 'prop-types';
+
+const CustomDatePicker = ({ label, onChange }) => {
+  const [value, setValue] = useState(null);
+
+  const handleDateChange = (newValue) => {
+    setValue(newValue);
+    // Formater la date avant de l'envoyer
+    const formattedDate = format(newValue, 'dd-MM-yyyy'); // Formatage direct avec date-fns
+    onChange(formattedDate);
+  };
+
+  return (
+    <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <DatePicker
+        label={label}
+        value={value}
+        onChange={handleDateChange}
+      />
+    </LocalizationProvider>
+  );
 };
 
-CustomDatepicker.propTypes = {
-    selectedDate: PropTypes.instanceOf(Date),
-    onDateChange: PropTypes.func.isRequired,  
-    placeholder: PropTypes.string,
+CustomDatePicker.propTypes = {
+  label: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
-export default CustomDatepicker;
+export default CustomDatePicker;
