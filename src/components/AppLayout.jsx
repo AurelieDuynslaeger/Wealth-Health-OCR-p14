@@ -1,4 +1,4 @@
-import SideMenu from './SideMenu';
+import SideMenu from './SideMenu/SideMenu';
 import MainContent from './MainContent';
 import PropTypes from 'prop-types';
 

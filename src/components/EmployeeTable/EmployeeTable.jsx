@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { TablePagination } from '@mui/material';
 import { HiChevronUp, HiChevronDown } from "react-icons/hi2";
-import '../styles/components/employeetable.css'; 
+import './employeetable.css'; 
 
 const EmployeeTable = () => {
   const employees = useSelector((state) => state.employees.employees);

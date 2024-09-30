@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import '../styles/components/customselect.css';
+import './customselect.css';
 
 /**
  * CustomSelect - Un composant de sélection personnalisé.

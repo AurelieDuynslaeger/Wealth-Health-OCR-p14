@@ -1,13 +1,13 @@
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { addEmployee } from '../redux/slices/employeeSlice';
+import { addEmployee } from '../../redux/slices/employeeSlice';
 import { useState } from 'react';
-import { optionsStates, optionsDepartement } from '../lib/optionsValues';
-import CustomDatePicker from './CustomDatePicker';
-import Button from './Button';
-import CustomSelect from './CustomSelect';
-import Modal from './Modal';
-import "../styles/components/employeeform.css";
+import { optionsStates, optionsDepartement } from '../../lib/optionsValues';
+import CustomDatePicker from '../CustomDatePicker';
+import Button from '../Button/Button';
+import CustomSelect from '../CustomSelect/CustomSelect';
+import Modal from '../Modal/Modal';
+import "./employeeform.css";
 
 const EmployeeForm = () => {
     const { register, handleSubmit, setValue} = useForm();

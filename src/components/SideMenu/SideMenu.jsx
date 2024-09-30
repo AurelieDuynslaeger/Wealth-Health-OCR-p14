@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'; 
-// import whlogo from "../../public/assets/wealthhealthlogo.png"; 
 import { FaHouse, FaPeopleGroup } from "react-icons/fa6";
-import '../styles/components/SideMenu.css';
+import './SideMenu.css';
 
 const navPaths = [
   {

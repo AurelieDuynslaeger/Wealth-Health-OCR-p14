@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import "../styles/components/Modal.css";
+import "./Modal.css";
 
 /**
  * Modal - Un composant de modal personnalisable.

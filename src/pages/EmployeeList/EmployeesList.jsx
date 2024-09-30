@@ -1,5 +1,5 @@
-import EmployeeTable from "../components/EmployeeTable"
-import '../styles/pages/employeeslist.css'
+import EmployeeTable from "../../components/EmployeeTable/EmployeeTable"
+import './employeeslist.css'
 
 
 const EmployeesList = () => {

@@ -1,5 +1,5 @@
-import EmployeeForm from "../components/EmployeeForm"
-import "../styles/pages/home.css"
+import EmployeeForm from "../../components/EmployeeForm/EmployeeForm"
+import "./home.css"
 
 
 const Home = () => {

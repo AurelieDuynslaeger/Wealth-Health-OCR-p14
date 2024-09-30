@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import '../styles/components/button.css';
+import './button.css';
 
 /**
  * MyButton - Un composant de bouton personnalisé.

@@ -7,7 +7,7 @@ import { generateFakeEmployees } from './lib/faker';
 import './index.css'
 
 if (!localStorage.getItem('employeesData')) {
-  const fakeEmployees = generateFakeEmployees(20);
+  const fakeEmployees = generateFakeEmployees(30);
   localStorage.setItem('employeesData', JSON.stringify(fakeEmployees));
 }
 
