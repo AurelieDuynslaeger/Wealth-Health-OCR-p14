@@ -67,7 +67,6 @@ Le projet vise à convertir l'application interne HRNet de jQuery vers **React**
    npm run dev
    ```
 
-4. **Serveur backend** : Utiliser le backend existant ou configurer une API appropriée pour l'application HRNet.
 
 ### Gestion des données
 
