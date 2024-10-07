@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { TablePagination } from '@mui/material';
 import { HiChevronUp, HiChevronDown } from "react-icons/hi2";
 import './employeetable.css'; 
@@ -11,9 +11,8 @@ const EmployeeTable = () => {
   const [page, setPage] = useState(0);
   //afficher 10 résultats par page
   const [rowsPerPage, setRowsPerPage] = useState(10); 
-
   //state pour le tri
-  const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
+  const [sortConfig, setSortConfig] = useState({ key: 'startDate', direction: 'asc' });
    //state pour la recherche
    const [searchTerm, setSearchTerm] = useState('');
 
@@ -29,21 +28,30 @@ const EmployeeTable = () => {
     setPage(0);
   };
 
-  //fonction de tri
-  const sortedEmployees = [...employees].sort((a, b) => {
+  //fonction de tri avec useMemo
+  //useMemo : fonction est utilisée pour mémoriser la liste triée des employés
+  //le tri n'est recalculé que lorsque les employés ou la configuration de tri changent
+  // Performance : en évitant de trier la liste à chaque rendu du composant, on réduit la charge de calcul (augmentation du nb d'employés). App plus rapide et réactive.
+  const sortedEmployees = useMemo(() => {
+    //créer une copie des employés pour le tri
+    let sortableEmployees = [...employees];
     if (sortConfig.key) {
-      const aValue = a[sortConfig.key];
-      const bValue = b[sortConfig.key];
+      sortableEmployees.sort((a, b) => {
+        const aValue = a[sortConfig.key];
+        const bValue = b[sortConfig.key];
 
-      if (aValue < bValue) {
-        return sortConfig.direction === 'asc' ? -1 : 1;
-      }
-      if (aValue > bValue) {
-        return sortConfig.direction === 'asc' ? 1 : -1;
-      }
+        if (aValue < bValue) {
+          return sortConfig.direction === 'asc' ? -1 : 1;
+        }
+        if (aValue > bValue) {
+          return sortConfig.direction === 'asc' ? 1 : -1;
+        }
+        return 0;
+      });
     }
-    return 0;
-  });
+    return sortableEmployees;
+    //useMemo ne recalculera le tri que lorsque l'une de ces valeurs change, assurant ainsi une efficacité maximale.
+  }, [employees, sortConfig]);
 
   //gérer le tri en cliquant sur un <th>
   const handleSort = (key) => {
@@ -135,7 +143,7 @@ const EmployeeTable = () => {
       {/* Pagination MUI */}
       <TablePagination
         component="div"
-        count={employees.length} 
+        count={filteredEmployees.length} 
         page={page}
         onPageChange={handleChangePage}
         rowsPerPage={rowsPerPage}
