@@ -93,7 +93,7 @@ const Modal = ({
           </button>
         </div>
         <div className="modal-body" id="modal-description">
-          <p>{text}</p> {/* Affiche le texte passé en prop */}
+          <p>{text}</p>
         </div>
         <div className="modal-footer">
           {primaryButton && (
@@ -123,7 +123,7 @@ const Modal = ({
 Modal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   title: PropTypes.string,
-  text: PropTypes.string.isRequired, // Conserve la prop text pour du contenu simple
+  text: PropTypes.string.isRequired,
   onClose: PropTypes.func.isRequired,
   primaryButton: PropTypes.shape({
     label: PropTypes.string.isRequired,
