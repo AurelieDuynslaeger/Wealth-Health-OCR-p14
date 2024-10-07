@@ -8,9 +8,6 @@ export const employeesSlice = createSlice({
     name: 'employees',
     initialState,
     reducers: {
-        getAll: (state) => {
-            return state;
-        },
         addEmployee: (state, action) => {
             const newEmployee = action.payload;
             state.employees.push(newEmployee);
@@ -32,6 +29,6 @@ export const employeesSlice = createSlice({
     }
 });
 
-export const { getAll, addEmployee, updateEmployee, deleteEmployee } = employeesSlice.actions;
+export const { addEmployee, updateEmployee, deleteEmployee } = employeesSlice.actions;
 
 export default employeesSlice.reducer;

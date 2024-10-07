@@ -1,5 +1,5 @@
-import SideMenu from './SideMenu/SideMenu';
-import MainContent from './MainContent';
+import SideMenu from '../SideMenu/SideMenu';
+import MainContent from '../MainContent/MainContent';
 import PropTypes from 'prop-types';
 
 const AppLayout = ({ children }) => {

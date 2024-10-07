@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import "./Modal.css";
 
 /**
- * Modal - Un composant de modal personnalisable.
+ * Modal - Un composant de modal simplifié pour des actions comme la modification ou la suppression d'employés.
  *
  * @component
  * @param {boolean} isOpen - Indique si la modal est ouverte ou fermée.
  * @param {string} [title] - Titre de la modal.
- * @param {ReactNode} children - Contenu à afficher à l'intérieur de la modal.
+ * @param {string} text - Contenu textuel à afficher à l'intérieur de la modal.
  * @param {Function} onClose - Fonction de rappel appelée lorsque la modal est fermée.
  * @param {Object} [primaryButton] - Informations sur le bouton principal.
  * @param {string} primaryButton.label - Étiquette du bouton principal.
@@ -29,18 +29,17 @@ import "./Modal.css";
  *
  * <Modal 
  *   isOpen={true} 
- *   title="My Modal" 
+ *   title="Delete Employee" 
+ *   text="Are you sure you want to delete this employee?" 
  *   onClose={() => console.log('Modal closed')} 
- *   primaryButton={{ label: 'Confirm', onClick: primaryAction }} 
+ *   primaryButton={{ label: 'Delete', onClick: primaryAction }} 
  *   secondaryButton={{ label: 'Cancel', onClick: secondaryAction }}
- * >
- *   <p>This is the content of the modal.</p>
- * </Modal>
+ * />
  */
 const Modal = ({
   isOpen,
   title,
-  children,
+  text,
   onClose,
   primaryButton,
   secondaryButton,
@@ -94,7 +93,7 @@ const Modal = ({
           </button>
         </div>
         <div className="modal-body" id="modal-description">
-          {children}
+          <p>{text}</p> {/* Affiche le texte passé en prop */}
         </div>
         <div className="modal-footer">
           {primaryButton && (
@@ -124,7 +123,7 @@ const Modal = ({
 Modal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   title: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  text: PropTypes.string.isRequired, // Conserve la prop text pour du contenu simple
   onClose: PropTypes.func.isRequired,
   primaryButton: PropTypes.shape({
     label: PropTypes.string.isRequired,

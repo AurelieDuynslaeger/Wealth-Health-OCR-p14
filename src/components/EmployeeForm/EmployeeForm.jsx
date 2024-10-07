@@ -1,12 +1,12 @@
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { addEmployee } from '../../redux/slices/employeeSlice';
-import { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { optionsStates, optionsDepartement } from '../../lib/optionsValues';
-import CustomDatePicker from '../CustomDatePicker';
+import CustomDatePicker from '../CustomDatePicker/CustomDatePicker';
 import Button from '../Button/Button';
 import CustomSelect from '../CustomSelect/CustomSelect';
-import Modal from '../Modal/Modal';
+const Modal = React.lazy(() => import('../Modal/Modal'));
 import "./employeeform.css";
 
 const EmployeeForm = () => {
@@ -22,7 +22,7 @@ const EmployeeForm = () => {
             id: Date.now(),
             department: selectedOptionDep?.value,
             state: selectedOptionStat?.value,
-            birthDate: data.birthDate,
+            dateOfBirth: data.dateOfBirth,
             startDate: data.startDate,
         };
     
@@ -43,7 +43,7 @@ const EmployeeForm = () => {
                     <CustomDatePicker 
                         label="Date of Birth" 
                         onChange={(date) => {
-                            setValue('birthDate', date);
+                            setValue('dateOfBirth', date);
                         }}
                     />
                     <CustomDatePicker 
@@ -76,14 +76,17 @@ const EmployeeForm = () => {
                 
                 <Button type="submit">Save</Button>
             </form>
-
-            <Modal
-                isOpen={isModalOpen} 
-                onClose={closeModal} 
-                primaryButton={{ label: "OK", onClick: closeModal }}
-            >
-                <p>Employee created!</p>
-            </Modal>
+                {/* Affichage conditionnel de la modal avec fallback */}
+                {isModalOpen && (
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Modal
+                        isOpen={isModalOpen} 
+                        onClose={closeModal} 
+                        primaryButton={{ label: "OK", onClick: closeModal }}
+                        text='Employee created!'
+                    />
+                </Suspense>
+            )}
         </>
     );
 }
