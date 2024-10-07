@@ -37,8 +37,11 @@ const EmployeeForm = () => {
     return (
         <>
             <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="identity-inputs">
                 <input {...register('firstName')} placeholder="First Name" required />
                 <input {...register('lastName')} placeholder="Last Name" required />
+
+                </div>
                 <div className='dates-pickers'>
                     <CustomDatePicker 
                         label="Date of Birth" 

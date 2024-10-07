@@ -148,7 +148,7 @@ const EmployeeTable = () => {
         onPageChange={handleChangePage}
         rowsPerPage={rowsPerPage}
         onRowsPerPageChange={handleChangeRowsPerPage}
-        labelRowsPerPage="Résultats par page:"
+        labelRowsPerPage="Résults per page:"
       />
     </div>
   );
