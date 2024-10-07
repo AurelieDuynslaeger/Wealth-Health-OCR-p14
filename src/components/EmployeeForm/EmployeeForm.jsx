@@ -61,13 +61,15 @@ const EmployeeForm = () => {
                     <legend>Address</legend>
                     <input {...register('street')} placeholder="Street" required />
                     <input {...register('city')} placeholder="City" required />
-                    <CustomSelect
-                        options={optionsStates}
-                        onChange={setSelectedOptionStat}
-                        selectedOption={selectedOptionStat} 
-                        placeholder="State"
-                    />
-                    <input {...register('zipcode')} placeholder="Zipcode" required />
+                    <div className='employee-location'>
+                        <input {...register('zipcode')} placeholder="Zipcode" required />
+                        <CustomSelect
+                            options={optionsStates}
+                            onChange={setSelectedOptionStat}
+                            selectedOption={selectedOptionStat} 
+                            placeholder="State"
+                        />
+                    </div>
                 </fieldset>
                 
                 <CustomSelect

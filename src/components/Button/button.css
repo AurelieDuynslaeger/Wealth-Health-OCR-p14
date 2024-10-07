@@ -8,8 +8,8 @@
     cursor: pointer; 
     transition: background-color 0.3s ease;
     font-family: "Josefin Sans", sans-serif;
-    font-size: 1.5rem;
-    width: 50%;
+    font-size: 1rem;
+      width: 80%;
     margin: auto;
   }
   
@@ -18,10 +18,16 @@
     color: #1f260d; /* Couleur de fond au survol */
   }
 
-  @media (max-width: 769px) {
+  @media (min-width: 768px) {
     .custom-button {
-      font-size: 1rem;
-      width: 80%;
+      font-size: 1.5rem;
+      width: 50%;
+    }
+  
+  }
+  @media (min-width: 992px) {
+    .custom-button {
+      width: 40%;
     }
   
   }

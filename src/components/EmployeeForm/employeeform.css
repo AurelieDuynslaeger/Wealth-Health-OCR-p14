@@ -30,7 +30,6 @@ form input{
     gap: 1rem;
 }
 
-
 .css-18pjc51-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
     color: #3e4720 !important;
 }
@@ -39,7 +38,6 @@ form input{
 }
 
 .css-lc42l8-MuiInputBase-input-MuiOutlinedInput-input {
-    
     height: 1.2em !important;
     padding: 10.5px 8px !important;
 }
@@ -56,6 +54,9 @@ fieldset{
 fieldset legend{
     font-size: 1.2rem
 }
+
+
+
 
 .custom-select{
     font-size: 1rem;
@@ -89,6 +90,18 @@ fieldset legend{
     fieldset legend{
         font-size: 1.5rem
     }
+    .employee-location{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .employee-location input{
+        width: 40%;
+    }
+    .employee-location .custom-select{
+        width: 40%;
+    }
+    
     
     .custom-select{
         font-size: 1.5rem;
@@ -97,6 +110,9 @@ fieldset legend{
 
 
   @media screen and (min-width: 992px) {
-  
+    .custom-select{
+        width: 50%;
+        margin: auto;
+    }
   }
 
