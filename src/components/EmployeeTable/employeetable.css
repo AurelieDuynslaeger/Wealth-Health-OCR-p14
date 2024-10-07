@@ -12,7 +12,7 @@
     background-color: white;
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    width: 50%;
+    width: 100%;
 
 }
   .employee-table {
@@ -49,11 +49,15 @@
   .employee-table th,
   .employee-table td {
       padding: 12px 15px;
-      font-size: 0.9rem;  
+      font-size: 1rem;  
   }
 
   .employee-table {
       font-size: 0.9rem; 
+  }
+
+  .table-container input{
+    width: 90%;
   }
 }
 

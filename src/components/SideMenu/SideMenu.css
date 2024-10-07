@@ -36,7 +36,6 @@
   }
   
   .menu-icon {
-    margin-right: 10px; 
     font-size: 20px;
   }
   
@@ -56,12 +55,11 @@
  
 
   .side-menu {
-    
     width: 250px;
   }
 
   .menu-icon {
-    margin-right: 0;
+    margin-right: 10PX;
   }
 }
 
