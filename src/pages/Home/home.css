@@ -7,10 +7,10 @@
     justify-content:space-evenly;
 }
 
-h1{
+.hr-form h1, .not-found-container h1{
     font-size: 24px;
 }
-p{
+.hr-form p, .not-found-container p{
     font-size: 16px;
     margin-bottom: 24px;
 }

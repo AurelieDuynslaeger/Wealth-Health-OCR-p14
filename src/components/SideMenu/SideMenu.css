@@ -1,5 +1,5 @@
 .side-menu {
-    width: 250px;
+  width: 100px;
     height: 100vh;
     background-color: #f5f9ce;
     color: #232C07;
@@ -7,6 +7,9 @@
     border-bottom-right-radius: 25px;
     padding: 20px;
     font-family: "Josefin Sans", sans-serif;
+  }
+  .menu-text {
+    display: none; 
   }
 
   .menu-list {
@@ -49,13 +52,12 @@
     color: #f5f9ce;
   }
 
-@media (max-width: 768px) {
-  .menu-text {
-    display: none; 
-  }
+@media screen and (min-width: 768px) {
+ 
 
   .side-menu {
-    width: 100px;
+    
+    width: 250px;
   }
 
   .menu-icon {
