@@ -42,6 +42,10 @@ form input{
     padding: 10.5px 8px !important;
 }
 
+.employee-location input{
+    margin-bottom: 0.5rem;
+}
+
 fieldset{
     padding: 1rem;
     display: flex;
@@ -54,9 +58,6 @@ fieldset{
 fieldset legend{
     font-size: 1.2rem
 }
-
-
-
 
 .custom-select{
     font-size: 1rem;

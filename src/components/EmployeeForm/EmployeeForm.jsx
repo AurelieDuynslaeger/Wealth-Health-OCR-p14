@@ -1,12 +1,14 @@
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { addEmployee } from '../../redux/slices/employeeSlice';
-import React, { useState, Suspense } from 'react';
+import { useState, Suspense } from 'react';
 import { optionsStates, optionsDepartement } from '../../lib/optionsValues';
 import CustomDatePicker from '../CustomDatePicker/CustomDatePicker';
 import Button from '../Button/Button';
 import CustomSelect from '../CustomSelect/CustomSelect';
-const Modal = React.lazy(() => import('../Modal/Modal'));
+import ModalComponent from 'modal-component-ocr-finalproject';
+
+// const Modal = React.lazy(() => import('../Modal/Modal'));
 import "./employeeform.css";
 
 const EmployeeForm = () => {
@@ -84,7 +86,7 @@ const EmployeeForm = () => {
                 {/* Affichage conditionnel de la modal avec fallback */}
                 {isModalOpen && (
                 <Suspense fallback={<div>Loading...</div>}>
-                    <Modal
+                    <ModalComponent
                         isOpen={isModalOpen} 
                         onClose={closeModal} 
                         primaryButton={{ label: "OK", onClick: closeModal }}
