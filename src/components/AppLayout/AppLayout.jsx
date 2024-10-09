@@ -1,3 +1,4 @@
+import React from 'react';
 import SideMenu from '../SideMenu/SideMenu';
 import MainContent from '../MainContent/MainContent';
 import PropTypes from 'prop-types';

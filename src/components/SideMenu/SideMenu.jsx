@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom'; 
 import { FaHouse, FaPeopleGroup } from "react-icons/fa6";
 import './SideMenu.css';

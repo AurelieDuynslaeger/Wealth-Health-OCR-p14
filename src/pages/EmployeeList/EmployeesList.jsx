@@ -1,3 +1,4 @@
+import React from 'react';
 import EmployeeTable from "../../components/EmployeeTable/EmployeeTable"
 import './employeeslist.css'
 

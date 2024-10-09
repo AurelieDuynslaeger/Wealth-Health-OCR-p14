@@ -1,3 +1,4 @@
+import React from 'react';
 import EmployeeForm from "../../components/EmployeeForm/EmployeeForm"
 import "./home.css"
 

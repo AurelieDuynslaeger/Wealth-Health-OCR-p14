@@ -1,12 +1,12 @@
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { addEmployee } from '../../redux/slices/employeeSlice';
-import { useState, Suspense } from 'react';
+import React, { useState, Suspense } from 'react';
 import { optionsStates, optionsDepartement } from '../../lib/optionsValues';
 import CustomDatePicker from '../CustomDatePicker/CustomDatePicker';
 import Button from '../Button/Button';
 import CustomSelect from '../CustomSelect/CustomSelect';
-import ModalComponent from 'modal-component-ocr-finalproject';
+import ModalComponent from "modal-component-ocr-finalproject";
 
 // const Modal = React.lazy(() => import('../Modal/Modal'));
 import "./employeeform.css";
@@ -89,8 +89,15 @@ const EmployeeForm = () => {
                     <ModalComponent
                         isOpen={isModalOpen} 
                         onClose={closeModal} 
-                        primaryButton={{ label: "OK", onClick: closeModal }}
+                        primaryButton={{ label: "OK", onClick: closeModal, style: {backgroundColor: "#98AC3B", color: "#000"} }}
                         text='Employee created!'
+                        style={{
+                            backgroundColor: "#f0f0f0",
+                            color: "#000",
+                            borderRadius: '8px',
+                            padding: "20px",
+                            boxShadow:"0 4px 12px rgba(0, 0, 0, 0.1)",
+                        }}
                     />
                 </Suspense>
             )}

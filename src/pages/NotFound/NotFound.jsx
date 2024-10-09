@@ -1,3 +1,4 @@
+import React from 'react';
 import '../Home/home.css'
 
 const NotFound = () => {
