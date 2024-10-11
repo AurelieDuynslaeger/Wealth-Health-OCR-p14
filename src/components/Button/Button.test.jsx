@@ -21,7 +21,9 @@ describe('MyButton Component', () => {
     const customStyle = { backgroundColor: 'blue' };
     render(<Button style={customStyle}>Styled Button</Button>);
     const buttonElement = screen.getByRole('button', { name: /styled button/i });
-    expect(buttonElement).toHaveStyle({ backgroundColor: 'blue' }); // Vérifie le style
+    
+    // expect(buttonElement).toHaveStyle({ backgroundColor: 'blue' });
+    expect(buttonElement).toHaveStyle({ backgroundColor: 'rgb(0, 0, 255)' });
   });
 
   //Test 3 : vérifie que le bouton est rendu avec le type correct
