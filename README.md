@@ -101,34 +101,43 @@ L'amélioration des performances résulte de la réduction de la manipulation ex
 ## Tests
 
 ### Tests manuels :
-Des tests manuels ont été effectués pour vérifier le bon fonctionnement de l'interface utilisateur, y compris la création, la modification et la suppression des employés dans l'application.
+Des tests manuels ont été effectués pour vérifier le bon fonctionnement de l'interface utilisateur.
 
 ### Tests unitaires :
-Il est également recommandé d'ajouter des **tests unitaires** pour valider le bon fonctionnement des composants React. Si tu souhaites effectuer des tests automatisés, **Jest** est configuré pour l'application.
+Des **tests unitaires** pour valider le bon fonctionnement des composants React ont été effectués. **Vitest** est configuré pour l'application.
+
 
 Pour exécuter les tests unitaires :
 
-1. Installer **Jest** et les outils de test associés :
+1. Installer **Vitest** et les outils de test associés :
    ```bash
-   npm install --save-dev jest @testing-library/react @testing-library/jest-dom
+   npm install --save-dev vitest @testing-library/react @testing-library/jest-dom
    ```
 
-2. Ajouter les tests pour les composants dans le répertoire `__tests__`, par exemple :
-   ```javascript
-   // __tests__/App.test.js
-   import { render, screen } from '@testing-library/react';
-   import App from '../App';
+2. Ajouter les tests pour les composants dans le même dossier que les composants. Par exemple, pour le composant `Button`, vous aurez les fichiers suivants :
+   ```
+   src/components/Button/
+   ├── Button.css
+   ├── Button.jsx
+   └── Button.test.jsx
+   ```
 
-   test('renders the HRNet homepage', () => {
-     render(<App />);
-     const linkElement = screen.getByText(/Welcome to HRNet/i);
-     expect(linkElement).toBeInTheDocument();
+   Exemple de test pour le composant `Button` :
+   ```javascript
+   // src/components/Button/Button.test.jsx
+   import { render, screen } from '@testing-library/react';
+   import Button from './Button';
+
+   test('renders the button with correct text', () => {
+     render(<Button label="Click Me" />);
+     const buttonElement = screen.getByText(/click me/i);
+     expect(buttonElement).toBeInTheDocument();
    });
    ```
 
 3. Lancer les tests :
    ```bash
-   npm run test
+   npx vitest
    ```
 
 <p align="right">(<a href="#readme-top">retour en haut</a>)</p>
