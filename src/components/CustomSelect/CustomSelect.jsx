@@ -33,6 +33,8 @@ const CustomSelect = ({ options, onChange, selectedOption, placeholder }) => {
         onClick={() => setIsOpen(!isOpen)} 
         aria-haspopup="listbox"
         aria-expanded={isOpen}
+        role="button"
+        tabIndex="0"
       >
         {selectedOption ? selectedOption.label : placeholder}
         <span className={`arrow ${isOpen ? 'up' : ''}`} />
